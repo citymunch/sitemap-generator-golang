@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	templater "text/template"
+	"text/template"
 	"time"
 	"unicode/utf8"
 )
@@ -60,7 +60,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	template, err := templater.ParseFiles("template.xml")
+	asset := string(MustAsset("template.xml"))
+	xml, err := template.New("").Parse(asset)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -69,7 +70,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = template.Execute(target, struct {
+	err = xml.Execute(target, struct {
 		WebAppUrl string
 		Response  *FindAuthorisedRestaurantsResponse
 	}{config.WebAppUrl, data})

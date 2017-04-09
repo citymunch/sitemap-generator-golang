@@ -13,3 +13,8 @@ CM_API_ENDPOINT="https://prod-api.citymunchapp.com" \
 	CM_WEB_APP_URL="https://web.citymunchapp.com" \
 	./sitemap-generator sitemap.xml
 ```
+
+Development
+===========
+
+Build with `./build`

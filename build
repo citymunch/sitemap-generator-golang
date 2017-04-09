@@ -1,1 +1,2 @@
+go-bindata template.xml
 go build -o sitemap-generator
