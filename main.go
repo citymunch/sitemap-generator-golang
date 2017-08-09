@@ -43,7 +43,7 @@ func main() {
 		log.Fatal(err)
 	}
 	req.Header.Add("Authorization", "Partner "+config.ApiKey)
-	req.Header.Add("X-CM-MaxVersionSupported", "9")
+	req.Header.Add("Accept", "application/vnd.citymunch.v14+json")
 	req.Header.Add("User-Agent", "CityMunch web app sitemap generator")
 
 	client := &http.Client{
