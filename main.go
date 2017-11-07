@@ -36,14 +36,14 @@ func main() {
 	printConfig(config)
 
 	// Limit to 50000 restaurants because that's the maximum URLs allowed in a sitemap file.
-	url := config.ApiEndpoint + "/restaurants/search/authorised-restaurants?limit=50000"
+	url := config.ApiEndpoint + "/restaurants/authorised?limit=50000"
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	req.Header.Add("Authorization", "Partner "+config.ApiKey)
-	req.Header.Add("Accept", "application/vnd.citymunch.v14+json")
+	req.Header.Add("Accept", "application/vnd.citymunch.v18+json")
 	req.Header.Add("User-Agent", "CityMunch web app sitemap generator")
 
 	client := &http.Client{
