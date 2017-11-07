@@ -17,4 +17,4 @@ CM_API_ENDPOINT="https://prod-api.citymunchapp.com" \
 Development
 ===========
 
-Build with `./build`
+Build with `bin/build`

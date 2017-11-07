@@ -1,0 +1,3 @@
+go-bindata template.xml
+GOOS=linux go build -o dist/web-app-sitemap-generator-linux
+GOOS=darwin go build -o dist/web-app-sitemap-generator-darwin
